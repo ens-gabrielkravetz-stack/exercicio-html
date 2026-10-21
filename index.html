@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wikipedia Hollow Knight</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+<body>
+
+  <header class="cabecalho" id="inicio">
+    <img src="logo.png" class="logo" alt="Logo Wikipedia Hollow Knight" width="1200" height="439">
+    <div class="infos">
+      <h1>Wikipedia Hollow Knight</h1>
+      <p>Este é um site próprio para jogadores iniciantes de Hollow Knight.</p>
+    </div>
+  </header>
+
+  <nav class="menu">
+    <ul>
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#conteudo">O jogo</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <main class="conteudo" id="conteudo">
+    <section class="corpo">
+      <div class="texto-corpo">
+        <h2>Bem-vindo a Hallownest</h2>
+        <p>Aqui você encontra o básico para começar a jogar Hollow Knight: um resumo da história e algumas dicas para não se perder nas primeiras horas.</p>
+
+        <div class="cards">
+          <button class="card-sobre" commandfor="modal1-sobre" command="show-modal">
+            <strong>Sobre o Jogo</strong>
+            <span>Clique aqui para saber mais sobre a história do jogo</span>
+          </button>
+
+          <button class="card-dicas" commandfor="modal2-dicas" command="show-modal">
+            <strong>Dicas</strong>
+            <span>Clique aqui para ver dicas para iniciantes</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="modal1-sobre" class="modal1">
+    <h3>Sobre o Jogo</h3>
+    <p class="pa">Hollow Knight é um jogo de ação e aventura em 2D, no estilo metroidvania, criado pelo pequeno estúdio independente australiano
+      Team Cherry e lançado em 2017. Você controla um cavaleiro silencioso e sem nome que desce até Hallownest, um antigo reino de
+      insetos que hoje está em ruínas, tomado por uma misteriosa infecção.</p>
+
+    <p class="pa">O mapa é um grande labirinto interligado. Muitos caminhos começam bloqueados e só se abrem depois que você ganha novas habilidades,
+      como o dash ou o pulo duplo. Por isso, voltar a áreas antigas faz parte da aventura. Pelo caminho você enfrenta dezenas de chefes desafiadores,
+      conhece personagens marcantes e monta seu estilo de jogo com os amuletos.</p>
+
+    <p class="pa">A história não é contada de forma direta: ela aparece aos poucos, em diálogos, cenários e detalhes escondidos. Somando a arte desenhada à mão e
+      a trilha sonora melancólica, Hollow Knight virou um dos jogos independentes mais elogiados da sua geração. A sequência, Hollow Knight: Silksong,
+      foi lançada em 4 de setembro de 2025.</p>
+
+    <button class="card-sobre-fechar" commandfor="modal1-sobre" command="close">Fechar</button>
+  </dialog>
+
+  <dialog id="modal2-dicas" class="modal1">
+    <h3>Dicas do Jogo</h3>
+    <ul class="pa">
+      <li>Explore cada canto do mapa para encontrar itens e habilidades escondidas.</li>
+      <li>Aprenda os padrões de ataque dos inimigos para derrotá-los mais facilmente.</li>
+      <li>Use o mapa para se orientar e marcar locais importantes.</li>
+      <li>Não tenha medo de voltar a áreas anteriores com novas habilidades.</li>
+    </ul>
+    <button class="card-dicas-fechar" commandfor="modal2-dicas" command="close">Fechar</button>
+  </dialog>
+
+  <footer class="rodape" id="contato">
+    <div class="rodape-colunas">
+      <div>
+        <h4>Links úteis</h4>
+        <ul>
+          <li><a href="#">Site oficial do jogo</a></li>
+          <li><a href="#">Wiki da comunidade</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Fale conosco</h4>
+        <ul>
+          <li><a href="#">contato@exemplo.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Redes sociais</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 Wikipedia Hollow Knight. Todos os direitos reservados.</p>
+  </footer>
+
+  <div id="mapa"></div>
+
+  <script>
+  const altura = 6016;
+  const largura = 9078;
+
+  const mapa = L.map('mapa', {
+    crs: L.CRS.Simple,   
+    minZoom: -6,
+    maxZoom: 0,
+    zoomSnap: 0.25
+  });
+
+  const limites = [[0, 0], [altura, largura]];
+  L.imageOverlay('mapa.png', limites).addTo(mapa);
+  mapa.fitBounds(limites);
+  mapa.setMinZoom(mapa.getZoom());
+  mapa.setMaxBounds(limites);
+</script>
+</body>
+</html>
