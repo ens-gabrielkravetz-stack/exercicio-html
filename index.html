@@ -43,6 +43,13 @@
             <strong>Dicas</strong>
             <span>Clique aqui para ver dicas para iniciantes</span>
           </button>
+
+          <button class="card-dicas" commandfor="modal3-dicas" command="show-modal">
+            <strong>n sei</strong>
+            <span>Clique aqui para n sei aina </span>
+          </button>
+
+
         </div>
       </div>
     </section>
@@ -66,7 +73,7 @@
     </div>
   </section>
 
-  <dialog id="modal1-sobre" class="modal1">
+  <dialog id="modal1-sobre" clas  s="modal1">
     <h3>Sobre o Jogo</h3>
     <p class="pa">Hollow Knight é um jogo de ação e aventura em 2D, no estilo metroidvania, criado pelo pequeno estúdio independente australiano
       Team Cherry e lançado em 2017. Você controla um cavaleiro silencioso e sem nome que desce até Hallownest, um antigo reino de
@@ -106,7 +113,6 @@
       <div>
         <h4>Fale conosco</h4>
         <ul>
-          <li><a href="#">contato@exemplo.com</a></li>
         </ul>
       </div>
       <div>
@@ -139,7 +145,7 @@
   mapa.setMaxBounds(limites);
   mapa.on('resize', function () {
     mapa.setMinZoom(-6);
-    mapa.fitBounds(limites, { animate: false });   // sem animação, para o zoom já estar certo na linha de baixo
+    mapa.fitBounds(limites, { animate: false });
     mapa.setMinZoom(mapa.getZoom());
   });
 </script>

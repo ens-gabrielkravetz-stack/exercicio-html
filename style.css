@@ -137,10 +137,11 @@ html:has(dialog[open]) {
 .modal1 h3 {
   margin: 0;
   padding: 0.5rem 1rem;
-  background-color: #b0b1b1;
+  background-color: #eff0f0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
   text-align: center;
+  box-shadow: 0px 5px 5px 0px #6364648f;
 }
 
 .pa {
