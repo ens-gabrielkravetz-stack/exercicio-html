@@ -1,17 +1,12 @@
-/* ================================================================
-   PALETA "HOLLOW KNIGHT" (preto, cinza e branco)
-   As cores ficam em variáveis: para mudar o visual do site inteiro,
-   basta trocar os valores aqui.
-   ================================================================ */
 :root {
-  --fundo: #0d0d0f;          /* preto, como as cavernas */
-  --superficie: #18181b;     /* caixas principais */
-  --superficie-2: #232327;   /* cards, menu, rodapé */
-  --superficie-3: #2f2f34;   /* hover */
+  --fundo: #0d0d0f;
+  --superficie: #18181b;
+  --superficie-2: #232327;
+  --superficie-3: #2f2f34;
   --borda: #3a3a40;
-  --texto: #ececec;          /* branco, como a máscara do cavaleiro */
+  --texto: #ececec;
   --texto-suave: #a3a3a8;
-  --destaque: #b8c4d0;       /* cinza-azulado bem discreto */
+  --destaque: #b8c4d0;
   --destaque-claro: #f2f2f2;
   --fonte-titulo: 'Cinzel', Georgia, serif;
 }
@@ -31,8 +26,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-
-/* Títulos com fonte parecida com a do jogo */
 h1, h2, h3, h4 {
   font-family: var(--fonte-titulo);
   color: var(--destaque-claro);
@@ -54,7 +47,6 @@ h1, h2, h3, h4 {
 .logo {
   width: clamp(120px, 20%, 250px);
   height: auto;
-  /* a logo é preta: o invert deixa ela branca para aparecer no fundo escuro */
   filter: invert(1);
 }
 
@@ -66,7 +58,6 @@ h1, h2, h3, h4 {
 }
 
 
-/*  MENU  */
 .menu {
   background-color: var(--superficie-2);
   border: 1px solid var(--borda);
@@ -93,8 +84,6 @@ h1, h2, h3, h4 {
   text-decoration: underline;
 }
 
-
-/*  CORPO E CARDS */
 .corpo {
   background-color: var(--superficie);
   border: 1px solid var(--borda);
@@ -107,8 +96,6 @@ h1, h2, h3, h4 {
 .imagem-corpo {
   width: 40%;
   max-width: 450px;
-  /* PROVISÓRIO: a imagem do corpo ainda é a logo preta.
-     Apague esta linha quando trocar por uma imagem do jogo. */
   filter: invert(1);
 }
 
@@ -282,7 +269,6 @@ html:has(dialog[open]) {
 }
 
 
-/* RODAPÉ */
 .rodape {
   background-color: var(--superficie-2);
   border: 1px solid var(--borda);

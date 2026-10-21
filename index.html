@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Wikipedia Hollow Knight</title>
 
-  <!-- Fonte Cinzel (parecida com a dos títulos do jogo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
@@ -17,7 +16,6 @@
 </head>
 <body>
 
-  <!-- CABEÇALHO -->
   <header class="cabecalho" id="inicio">
     <img src="logo.png" class="logo" alt="Logo Wikipedia Hollow Knight" width="1200" height="439">
     <div class="infos">
@@ -26,7 +24,6 @@
     </div>
   </header>
 
-  <!--  MENU  -->
   <nav class="menu">
     <ul>
       <li><a href="#inicio">Início</a></li>
@@ -35,7 +32,6 @@
     </ul>
   </nav>
 
-  <!--  CORPO  -->
   <main class="conteudo" id="conteudo">
     <section class="corpo">
       <img src="logo.png" class="imagem-corpo" alt="Arte de Hollow Knight" width="1200" height="439">
@@ -67,7 +63,6 @@
   <section class="localizacao" id="localizacao">
     <h2>Onde estamos?</h2>
 
-    <!-- Grid com mapa e o bloco de endereço -->
     <div class="localizacao-grid">
       <div id="mapa"></div>
 
@@ -83,7 +78,6 @@
     </div>
   </section>
 
-  <!-- Modal: Sobre o Jogo -->
   <dialog id="modal1-sobre" class="modal1">
     <h3>Sobre o Jogo</h3>
 
@@ -102,7 +96,6 @@
     <button class="card-sobre-fechar" commandfor="modal1-sobre" command="close">Fechar</button>
   </dialog>
 
-  <!-- Modal: Dicas -->
   <dialog id="modal2-dicas" class="modal1">
     <h3>Dicas do Jogo</h3>
 
@@ -116,9 +109,6 @@
     <button class="card-dicas-fechar" commandfor="modal2-dicas" command="close">Fechar</button>
   </dialog>
 
-  <!-- Modal: Quiz -->
-  <!-- Cada pergunta é um <details>: a resposta fica escondida até clicar na pergunta.
-       Funciona só com HTML, sem JavaScript. -->
   <dialog id="modal3-dicas" class="modal1">
     <h3>Quiz de Hallownest</h3>
 
@@ -149,7 +139,6 @@
     <button class="card-dicas-fechar" commandfor="modal3-dicas" command="close">Fechar</button>
   </dialog>
 
-  <!-- Rodapé -->
   <footer class="rodape" id="contato">
     <div class="rodape-colunas">
       <div>
@@ -163,7 +152,7 @@
       <div>
         <h4>Fale conosco</h4>
         <ul>
-          <li><a href="mailto:contato@hollowknight.com">E-mail</a></li>
+          <li><a href="#">E-mail</a></li>
         </ul>
       </div>
 
@@ -180,7 +169,6 @@
   </footer>
 
   <script>
-    // Tamanho real da imagem do mapa
     const altura = 6016;
     const largura = 9078;
 
