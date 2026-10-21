@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Wikipedia Hollow Knight</title>
 
+  <!-- Fonte Cinzel (parecida com a dos títulos do jogo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
@@ -51,8 +56,8 @@
           </button>
 
           <button class="card-dicas" commandfor="modal3-dicas" command="show-modal">
-            <strong>n sei</strong>
-            <span>Clique aqui para n sei aina </span>
+            <strong>Quiz</strong>
+            <span>Teste o que você sabe sobre Hallownest</span>
           </button>
         </div>
       </div>
@@ -111,6 +116,39 @@
     <button class="card-dicas-fechar" commandfor="modal2-dicas" command="close">Fechar</button>
   </dialog>
 
+  <!-- Modal: Quiz -->
+  <!-- Cada pergunta é um <details>: a resposta fica escondida até clicar na pergunta.
+       Funciona só com HTML, sem JavaScript. -->
+  <dialog id="modal3-dicas" class="modal1">
+    <h3>Quiz de Hallownest</h3>
+
+    <p class="pa">Clique em cada pergunta para ver a resposta.</p>
+
+    <div class="quiz">
+      <details>
+        <summary>Qual estúdio criou Hollow Knight?</summary>
+        <p>A Team Cherry, um pequeno estúdio independente da Austrália.</p>
+      </details>
+
+      <details>
+        <summary>Como se chama o reino onde o jogo se passa?</summary>
+        <p>Hallownest, um antigo reino de insetos que hoje está em ruínas.</p>
+      </details>
+
+      <details>
+        <summary>Qual é o vilarejo da superfície, onde fica a entrada do reino?</summary>
+        <p>Dirtmouth. É de lá que o cavaleiro desce para Hallownest.</p>
+      </details>
+
+      <details>
+        <summary>Qual é o nome da sequência do jogo?</summary>
+        <p>Hollow Knight: Silksong, lançada em 4 de setembro de 2025.</p>
+      </details>
+    </div>
+
+    <button class="card-dicas-fechar" commandfor="modal3-dicas" command="close">Fechar</button>
+  </dialog>
+
   <!-- Rodapé -->
   <footer class="rodape" id="contato">
     <div class="rodape-colunas">
@@ -149,19 +187,18 @@
     const mapa = L.map('mapa', {
       crs: L.CRS.Simple,
       minZoom: -6,
-      maxZoom: 0,
-      zoomSnap: 0.25
+      maxZoom: 1,
+      zoomSnap: 0.25,
+      attributionControl: false,
     });
 
     const limites = [[0, 0], [altura, largura]];
     L.imageOverlay('mapa.png', limites).addTo(mapa);
 
-    // Começa mostrando o mapa inteiro e não deixa afastar além disso
     mapa.fitBounds(limites);
     mapa.setMinZoom(mapa.getZoom());
     mapa.setMaxBounds(limites);
 
-    // Se a caixa do mapa mudar de tamanho, reencaixa o mapa inteiro
     mapa.on('resize', function () {
       mapa.setMinZoom(-6);
       mapa.fitBounds(limites, { animate: false });
