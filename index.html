@@ -28,6 +28,7 @@
 
   <main class="conteudo" id="conteudo">
     <section class="corpo">
+      <img src="logo.png" class="imagem-corpo" alt="Arte de Hollow Knight" width="1200" height="439">
       <div class="texto-corpo">
         <h2>Bem-vindo a Hallownest</h2>
         <p>Aqui você encontra o básico para começar a jogar Hollow Knight: um resumo da história e algumas dicas para não se perder nas primeiras horas.</p>
@@ -46,6 +47,24 @@
       </div>
     </section>
   </main>
+
+  <section class="localizacao" id="localizacao">
+    <h2>Onde estamos?</h2>
+
+    <div class="localizacao-grid">
+      <div id="mapa"></div>
+
+      <div class="localizacao-info">
+        <h3>Reino de Hallownest</h3>
+        <p><strong>Endereço:</strong> Poço de Dirtmouth, s/n — entrada do reino</p>
+        <p><strong>Cidade:</strong> Dirtmouth, Hallownest</p>
+        <p><strong>Ponto de referência:</strong> ao lado do banco onde fica o Elderbug</p>
+        <p><strong>Como chegar:</strong> desça pelo poço no centro de Dirtmouth e siga até a Encruzilhada Esquecida</p>
+        <p><strong>Horário:</strong> aberto 24 horas (cuidado com a infecção)</p>
+        <p class="aviso-ficticio">Endereço fictício, inspirado no jogo. Arraste o mapa e use a rodinha do mouse (ou dois dedos no celular) para dar zoom.</p>
+      </div>
+    </div>
+  </section>
 
   <dialog id="modal1-sobre" class="modal1">
     <h3>Sobre o Jogo</h3>
@@ -101,7 +120,6 @@
     <p class="copyright">&copy; 2026 Wikipedia Hollow Knight. Todos os direitos reservados.</p>
   </footer>
 
-  <div id="mapa"></div>
 
   <script>
   const altura = 6016;
@@ -119,6 +137,11 @@
   mapa.fitBounds(limites);
   mapa.setMinZoom(mapa.getZoom());
   mapa.setMaxBounds(limites);
+  mapa.on('resize', function () {
+    mapa.setMinZoom(-6);
+    mapa.fitBounds(limites, { animate: false });   // sem animação, para o zoom já estar certo na linha de baixo
+    mapa.setMinZoom(mapa.getZoom());
+  });
 </script>
 </body>
 </html>

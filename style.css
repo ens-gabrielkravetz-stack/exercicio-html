@@ -251,3 +251,56 @@ html:has(dialog[open]) {
   aspect-ratio: 3 / 2;
   border-radius: 5px;
 }
+
+.localizacao {
+  background-color: rgb(231, 230, 231);
+  border-radius: 5px;
+  padding: 1.5rem;
+}
+
+.localizacao h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.localizacao-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.localizacao #mapa {
+  background-color: #000;
+}
+
+.localizacao-info {
+  background-color: #464747;
+  color: #fefefd;
+  border-radius: 5px;
+  padding: 1.2rem 1.5rem;
+}
+
+.localizacao-info h3 {
+  margin-top: 0;
+}
+
+.localizacao-info p {
+  margin: 0.6rem 0;
+}
+
+.aviso-ficticio {
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+  .localizacao-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .localizacao-info {
+    text-align: center;
+  }
+}
