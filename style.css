@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   padding: 1rem;
@@ -12,6 +13,8 @@ img {
   height: auto;
 }
 
+
+/*CABEÇALHO*/
 .cabecalho {
   background-color: rgb(231, 230, 231);
   border-radius: 5px;
@@ -36,6 +39,8 @@ img {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 
+
+/*  MENU  */
 .menu {
   background-color: #464747;
   border-radius: 5px;
@@ -61,12 +66,13 @@ img {
   text-decoration: underline;
 }
 
+
+/*  CORPO E CARDS */
 .corpo {
   background-color: rgb(231, 230, 231);
   border-radius: 5px;
   padding: 1.5rem;
   display: flex;
-  gap: 2rem;
   align-items: center;
 }
 
@@ -117,6 +123,8 @@ img {
   background-color: #636464;
 }
 
+
+/* MODAIS  */
 html:has(dialog[open]) {
   overflow: hidden;
 }
@@ -167,6 +175,58 @@ html:has(dialog[open]) {
   background-color: #636464;
 }
 
+
+/* LOCALIZAÇÃO */
+.localizacao {
+  background-color: rgb(231, 230, 231);
+  border-radius: 5px;
+  padding: 1.5rem;
+}
+
+.localizacao h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.localizacao-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+#mapa {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  border-radius: 5px;
+}
+
+.localizacao #mapa {
+  background-color: #000;
+}
+
+.localizacao-info {
+  background-color: #464747;
+  color: #fefefd;
+  border-radius: 5px;
+  padding: 1.2rem 1.5rem;
+}
+
+.localizacao-info h3 {
+  margin-top: 0;
+}
+
+.localizacao-info p {
+  margin: 0.6rem 0;
+}
+
+.aviso-ficticio {
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+
+
+/* RODAPÉ */
 .rodape {
   background-color: #464747;
   color: #fefefd;
@@ -216,6 +276,7 @@ html:has(dialog[open]) {
   .card-dicas {
     text-align: center;
   }
+
   .cards {
     justify-content: center;
   }
@@ -223,6 +284,7 @@ html:has(dialog[open]) {
   .corpo {
     flex-direction: column-reverse;
   }
+
   .imagem-corpo {
     width: 100%;
   }
@@ -245,57 +307,6 @@ html:has(dialog[open]) {
   .rodape-colunas {
     flex-direction: column;
   }
-}
-
-#mapa {
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  border-radius: 5px;
-}
-
-.localizacao {
-  background-color: rgb(231, 230, 231);
-  border-radius: 5px;
-  padding: 1.5rem;
-}
-
-.localizacao h2 {
-  margin-top: 0;
-  text-align: center;
-}
-
-.localizacao-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-  gap: 2rem;
-  align-items: center;
-}
-
-.localizacao #mapa {
-  background-color: #000;
-}
-
-.localizacao-info {
-  background-color: #464747;
-  color: #fefefd;
-  border-radius: 5px;
-  padding: 1.2rem 1.5rem;
-}
-
-.localizacao-info h3 {
-  margin-top: 0;
-}
-
-.localizacao-info p {
-  margin: 0.6rem 0;
-}
-
-.aviso-ficticio {
-  font-size: 0.8em;
-  opacity: 0.8;
-}
-
-@media (max-width: 600px) {
   .localizacao-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
