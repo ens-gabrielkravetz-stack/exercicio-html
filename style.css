@@ -303,13 +303,12 @@ html:has(dialog[open]) {
   margin: 1rem 0 0;
 }
 
-/* PERGUNTAS FREQUENTES */
 .faq {
   background-color: var(--superficie);
   border: 1px solid var(--borda);
   border-radius: 5px;
   padding: 1.5rem;
-  font-size: 1rem;           /* 16px: boa leitura no celular e no tablet */
+  font-size: 1rem;        
   line-height: 1.6;
 }
 
@@ -327,7 +326,7 @@ html:has(dialog[open]) {
 
 .faq summary {
   cursor: pointer;
-  padding: 1rem 1.2rem;      /* área grande para tocar com o dedo */
+  padding: 1rem 1.2rem;
   font-weight: bold;
   color: var(--destaque-claro);
 }
