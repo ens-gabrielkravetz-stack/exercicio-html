@@ -303,6 +303,44 @@ html:has(dialog[open]) {
   margin: 1rem 0 0;
 }
 
+/* PERGUNTAS FREQUENTES */
+.faq {
+  background-color: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 5px;
+  padding: 1.5rem;
+  font-size: 1rem;           /* 16px: boa leitura no celular e no tablet */
+  line-height: 1.6;
+}
+
+.faq h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.faq details {
+  background-color: var(--superficie-2);
+  border: 1px solid var(--borda);
+  border-radius: 5px;
+  margin-bottom: 0.8rem;
+}
+
+.faq summary {
+  cursor: pointer;
+  padding: 1rem 1.2rem;      /* área grande para tocar com o dedo */
+  font-weight: bold;
+  color: var(--destaque-claro);
+}
+
+.faq details[open] summary {
+  border-bottom: 1px solid var(--borda);
+}
+
+.faq details p {
+  margin: 0;
+  padding: 1rem 1.2rem;
+}
+
 @media (max-width: 1024px) {
 
   body { font-size: 14px; }
